@@ -1,10 +1,12 @@
-import { json } from '@tanstack/react-router'
-import { createAPIFileRoute } from '@tanstack/react-start/api'
+import { createFileRoute } from '@tanstack/react-router'
+import { json } from '@tanstack/react-start'
 import { getSchedulerStatus } from '../../../server/scheduler'
 import { getChangesSummary } from '../../../server/scheduler/storage'
 
-export const APIRoute = createAPIFileRoute('/api/scheduler/status')({
-  GET: async ({ request }) => {
+export const Route = createFileRoute('/api/scheduler/status')({
+  server: {
+    handlers: {
+      GET: async ({ request }) => {
     try {
       const status = getSchedulerStatus()
       const changesSummary = await getChangesSummary()
@@ -24,5 +26,7 @@ export const APIRoute = createAPIFileRoute('/api/scheduler/status')({
         { status: 500 }
       )
     }
+      },
+    },
   },
 })

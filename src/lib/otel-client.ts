@@ -32,7 +32,7 @@ const otlpEndpoint =
 const otlpEndpointBearerToken = import.meta.env
   .VITE_PUBLIC_OTEL_EXPORTER_OTLP_BEARER_TOKEN;
 
-const authHeader = otlpEndpointBearerToken
+const authHeader: Record<string, string> = otlpEndpointBearerToken
   ? { Authorization: `Bearer ${otlpEndpointBearerToken}` }
   : {};
 
