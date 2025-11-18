@@ -8,6 +8,13 @@ export default defineConfig({
     port: 3001,
     host: '0.0.0.0',
     allowedHosts: ['aau-basketball-tryouts.observe-demo.com'],
+    // Enable compression in dev mode
+    compress: true,
+  },
+  // Enable experimental features for better performance
+  esbuild: {
+    // Remove console.log in production
+    drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
   },
   plugins: [
     tsConfigPaths({
@@ -19,6 +26,11 @@ export default defineConfig({
     viteReact(),
   ],
   build: {
+    // Enable compression and optimization
+    minify: 'esbuild',
+    cssMinify: true,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       external: (id) => {
         // Externalize server-side OpenTelemetry packages for client build
@@ -30,6 +42,10 @@ export default defineConfig({
         return false
       },
       output: {
+        // Optimize chunk naming for better caching
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
         manualChunks: {
           // React vendor bundle
           'vendor-react': ['react', 'react-dom'],
@@ -60,6 +76,9 @@ export default defineConfig({
           'vendor-utils': ['axios', 'zod', 'tailwind-merge']
         }
       }
-    }
+    },
+    // Asset optimization
+    assetsInlineLimit: 4096, // Inline assets smaller than 4kb
+    cssCodeSplit: true, // Split CSS into separate files
   }
 })
