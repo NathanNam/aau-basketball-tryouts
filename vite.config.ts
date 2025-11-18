@@ -8,8 +8,6 @@ export default defineConfig({
     port: 3001,
     host: '0.0.0.0',
     allowedHosts: ['aau-basketball-tryouts.observe-demo.com'],
-    // Enable compression in dev mode
-    compress: true,
   },
   // Enable experimental features for better performance
   esbuild: {
@@ -46,34 +44,32 @@ export default defineConfig({
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]',
-        manualChunks: {
+        manualChunks: (id) => {
+          // Only apply manual chunks for client build, not SSR
+          if (process.env.VITE_SSR) return undefined
+
           // React vendor bundle
-          'vendor-react': ['react', 'react-dom'],
+          if (id.includes('react') || id.includes('react-dom')) {
+            return 'vendor-react'
+          }
+
           // TanStack router bundle
-          'vendor-router': [
-            '@tanstack/react-router',
-            '@tanstack/react-router-devtools',
-            '@tanstack/react-start'
-          ],
+          if (id.includes('@tanstack/react-router') ||
+              id.includes('@tanstack/react-start')) {
+            return 'vendor-router'
+          }
+
           // OpenTelemetry instrumentation bundle
-          'vendor-otel': [
-            '@opentelemetry/api',
-            '@opentelemetry/api-logs',
-            '@opentelemetry/exporter-logs-otlp-http',
-            '@opentelemetry/exporter-metrics-otlp-proto',
-            '@opentelemetry/exporter-trace-otlp-http',
-            '@opentelemetry/instrumentation',
-            '@opentelemetry/instrumentation-document-load',
-            '@opentelemetry/instrumentation-fetch',
-            '@opentelemetry/instrumentation-xml-http-request',
-            '@opentelemetry/resources',
-            '@opentelemetry/sdk-logs',
-            '@opentelemetry/sdk-metrics',
-            '@opentelemetry/sdk-trace-web',
-            '@opentelemetry/semantic-conventions'
-          ],
+          if (id.includes('@opentelemetry/')) {
+            return 'vendor-otel'
+          }
+
           // Utility libraries
-          'vendor-utils': ['axios', 'zod', 'tailwind-merge']
+          if (id.includes('axios') || id.includes('zod') || id.includes('tailwind-merge')) {
+            return 'vendor-utils'
+          }
+
+          return undefined
         }
       }
     },

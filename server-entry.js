@@ -84,12 +84,20 @@ try {
 }
 
 import { createServer } from 'node:http'
-import { readFile } from 'node:fs/promises'
+import { readFile, readdir } from 'node:fs/promises'
 import { join, extname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import * as serverModule from './dist/server/server.js'
 
+// Dynamically find the server file
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
+const serverAssetsDir = join(__dirname, 'dist/server/assets')
+const files = await readdir(serverAssetsDir)
+const serverFile = files.find(file => file.startsWith('server-') && file.endsWith('.js'))
+if (!serverFile) {
+  throw new Error('Could not find server file in dist/server/assets/')
+}
+
+const serverModule = await import(join(serverAssetsDir, serverFile))
 const PORT = process.env.PORT || 3001
 const HOST = process.env.HOST || '0.0.0.0'
 
