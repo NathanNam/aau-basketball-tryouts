@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { FilterPanel } from '../components/FilterPanel'
-import { TryoutCard } from '../components/TryoutCard'
+import { VirtualizedTryoutsList } from '../components/VirtualizedTryoutsList'
 import type { Tryout, AgeGroup, Gender } from '../types/tryout'
 import tryoutsData from '../data/tryouts.json'
 
@@ -165,11 +165,10 @@ function Home() {
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-6">
-                {filteredTryouts.map((tryout) => (
-                  <TryoutCard key={tryout.id} tryout={tryout} />
-                ))}
-              </div>
+              <VirtualizedTryoutsList
+                tryouts={filteredTryouts}
+                initialItemsPerPage={25}
+              />
             )}
           </div>
         </div>
