@@ -29,6 +29,26 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
+      // Resource hints for performance optimization
+      {
+        rel: 'preconnect',
+        href: import.meta.env.VITE_PUBLIC_OTEL_EXPORTER_OTLP_ENDPOINT || 'http://localhost:4318',
+        crossOrigin: 'anonymous'
+      },
+      // DNS prefetch for external resources used in tryouts data
+      { rel: 'dns-prefetch', href: '//docs.google.com' },
+      { rel: 'dns-prefetch', href: '//forms.gle' },
+      { rel: 'dns-prefetch', href: '//bayareawildcats.org' },
+      { rel: 'dns-prefetch', href: '//teamarsenalaau.com' },
+      { rel: 'dns-prefetch', href: '//baycitybasketball.leagueapps.com' },
+      { rel: 'dns-prefetch', href: '//teamarsenalaau.leagueapps.com' },
+      { rel: 'dns-prefetch', href: '//www.bayarealava.com' },
+      { rel: 'dns-prefetch', href: '//www.baycitybasketball.com' },
+      { rel: 'dns-prefetch', href: '//www.lakeshowhoops.com' },
+      { rel: 'dns-prefetch', href: '//www.norcalrushbasketball.com' },
+      { rel: 'dns-prefetch', href: '//www.sfbasportsperformance.com' },
+      { rel: 'dns-prefetch', href: '//bayareamambas.com' },
+      // Favicon and manifest links
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
