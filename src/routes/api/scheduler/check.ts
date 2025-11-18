@@ -1,11 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { json } from '@tanstack/react-start'
+import { json } from '@tanstack/react-router'
+import { createAPIFileRoute } from '@tanstack/react-start/api'
 import { executeScrapeJob } from '../../../server/scheduler'
 
-export const Route = createFileRoute('/api/scheduler/check')({
-  server: {
-    handlers: {
-      GET: async ({ request }) => {
+export const APIRoute = createAPIFileRoute('/api/scheduler/check')({
+  GET: async ({ request }) => {
     try {
       console.log('[API] Manual scrape job triggered')
       const result = await executeScrapeJob()
@@ -33,7 +31,5 @@ export const Route = createFileRoute('/api/scheduler/check')({
         { status: 500 }
       )
     }
-      },
-    },
   },
 })

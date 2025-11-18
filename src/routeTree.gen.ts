@@ -25,9 +25,6 @@ import { Route as ApiUsersRouteImport } from './routes/api/users'
 import { Route as PathlessLayoutNestedLayoutRouteImport } from './routes/_pathlessLayout/_nested-layout'
 import { Route as PostsPostIdDeepRouteImport } from './routes/posts_.$postId.deep'
 import { Route as ApiUsersUserIdRouteImport } from './routes/api/users.$userId'
-import { Route as ApiSchedulerStatusRouteImport } from './routes/api/scheduler/status'
-import { Route as ApiSchedulerHistoryRouteImport } from './routes/api/scheduler/history'
-import { Route as ApiSchedulerCheckRouteImport } from './routes/api/scheduler/check'
 import { Route as PathlessLayoutNestedLayoutRouteBRouteImport } from './routes/_pathlessLayout/_nested-layout/route-b'
 import { Route as PathlessLayoutNestedLayoutRouteARouteImport } from './routes/_pathlessLayout/_nested-layout/route-a'
 
@@ -110,21 +107,6 @@ const ApiUsersUserIdRoute = ApiUsersUserIdRouteImport.update({
   path: '/$userId',
   getParentRoute: () => ApiUsersRoute,
 } as any)
-const ApiSchedulerStatusRoute = ApiSchedulerStatusRouteImport.update({
-  id: '/api/scheduler/status',
-  path: '/api/scheduler/status',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiSchedulerHistoryRoute = ApiSchedulerHistoryRouteImport.update({
-  id: '/api/scheduler/history',
-  path: '/api/scheduler/history',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiSchedulerCheckRoute = ApiSchedulerCheckRouteImport.update({
-  id: '/api/scheduler/check',
-  path: '/api/scheduler/check',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PathlessLayoutNestedLayoutRouteBRoute =
   PathlessLayoutNestedLayoutRouteBRouteImport.update({
     id: '/route-b',
@@ -153,9 +135,6 @@ export interface FileRoutesByFullPath {
   '/users/': typeof UsersIndexRoute
   '/route-a': typeof PathlessLayoutNestedLayoutRouteARoute
   '/route-b': typeof PathlessLayoutNestedLayoutRouteBRoute
-  '/api/scheduler/check': typeof ApiSchedulerCheckRoute
-  '/api/scheduler/history': typeof ApiSchedulerHistoryRoute
-  '/api/scheduler/status': typeof ApiSchedulerStatusRoute
   '/api/users/$userId': typeof ApiUsersUserIdRoute
   '/posts/$postId/deep': typeof PostsPostIdDeepRoute
 }
@@ -172,9 +151,6 @@ export interface FileRoutesByTo {
   '/users': typeof UsersIndexRoute
   '/route-a': typeof PathlessLayoutNestedLayoutRouteARoute
   '/route-b': typeof PathlessLayoutNestedLayoutRouteBRoute
-  '/api/scheduler/check': typeof ApiSchedulerCheckRoute
-  '/api/scheduler/history': typeof ApiSchedulerHistoryRoute
-  '/api/scheduler/status': typeof ApiSchedulerStatusRoute
   '/api/users/$userId': typeof ApiUsersUserIdRoute
   '/posts/$postId/deep': typeof PostsPostIdDeepRoute
 }
@@ -196,9 +172,6 @@ export interface FileRoutesById {
   '/users/': typeof UsersIndexRoute
   '/_pathlessLayout/_nested-layout/route-a': typeof PathlessLayoutNestedLayoutRouteARoute
   '/_pathlessLayout/_nested-layout/route-b': typeof PathlessLayoutNestedLayoutRouteBRoute
-  '/api/scheduler/check': typeof ApiSchedulerCheckRoute
-  '/api/scheduler/history': typeof ApiSchedulerHistoryRoute
-  '/api/scheduler/status': typeof ApiSchedulerStatusRoute
   '/api/users/$userId': typeof ApiUsersUserIdRoute
   '/posts_/$postId/deep': typeof PostsPostIdDeepRoute
 }
@@ -219,9 +192,6 @@ export interface FileRouteTypes {
     | '/users/'
     | '/route-a'
     | '/route-b'
-    | '/api/scheduler/check'
-    | '/api/scheduler/history'
-    | '/api/scheduler/status'
     | '/api/users/$userId'
     | '/posts/$postId/deep'
   fileRoutesByTo: FileRoutesByTo
@@ -238,9 +208,6 @@ export interface FileRouteTypes {
     | '/users'
     | '/route-a'
     | '/route-b'
-    | '/api/scheduler/check'
-    | '/api/scheduler/history'
-    | '/api/scheduler/status'
     | '/api/users/$userId'
     | '/posts/$postId/deep'
   id:
@@ -261,9 +228,6 @@ export interface FileRouteTypes {
     | '/users/'
     | '/_pathlessLayout/_nested-layout/route-a'
     | '/_pathlessLayout/_nested-layout/route-b'
-    | '/api/scheduler/check'
-    | '/api/scheduler/history'
-    | '/api/scheduler/status'
     | '/api/users/$userId'
     | '/posts_/$postId/deep'
   fileRoutesById: FileRoutesById
@@ -278,9 +242,6 @@ export interface RootRouteChildren {
   SchedulerRoute: typeof SchedulerRoute
   UsersRoute: typeof UsersRouteWithChildren
   ApiUsersRoute: typeof ApiUsersRouteWithChildren
-  ApiSchedulerCheckRoute: typeof ApiSchedulerCheckRoute
-  ApiSchedulerHistoryRoute: typeof ApiSchedulerHistoryRoute
-  ApiSchedulerStatusRoute: typeof ApiSchedulerStatusRoute
   PostsPostIdDeepRoute: typeof PostsPostIdDeepRoute
 }
 
@@ -398,27 +359,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiUsersUserIdRouteImport
       parentRoute: typeof ApiUsersRoute
     }
-    '/api/scheduler/status': {
-      id: '/api/scheduler/status'
-      path: '/api/scheduler/status'
-      fullPath: '/api/scheduler/status'
-      preLoaderRoute: typeof ApiSchedulerStatusRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/scheduler/history': {
-      id: '/api/scheduler/history'
-      path: '/api/scheduler/history'
-      fullPath: '/api/scheduler/history'
-      preLoaderRoute: typeof ApiSchedulerHistoryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/scheduler/check': {
-      id: '/api/scheduler/check'
-      path: '/api/scheduler/check'
-      fullPath: '/api/scheduler/check'
-      preLoaderRoute: typeof ApiSchedulerCheckRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/_pathlessLayout/_nested-layout/route-b': {
       id: '/_pathlessLayout/_nested-layout/route-b'
       path: '/route-b'
@@ -512,9 +452,6 @@ const rootRouteChildren: RootRouteChildren = {
   SchedulerRoute: SchedulerRoute,
   UsersRoute: UsersRouteWithChildren,
   ApiUsersRoute: ApiUsersRouteWithChildren,
-  ApiSchedulerCheckRoute: ApiSchedulerCheckRoute,
-  ApiSchedulerHistoryRoute: ApiSchedulerHistoryRoute,
-  ApiSchedulerStatusRoute: ApiSchedulerStatusRoute,
   PostsPostIdDeepRoute: PostsPostIdDeepRoute,
 }
 export const routeTree = rootRouteImport
