@@ -10,7 +10,6 @@ import {
 } from "@opentelemetry/sdk-logs";
 import { PeriodicExportingMetricReader } from "@opentelemetry/sdk-metrics";
 import { NodeSDK } from "@opentelemetry/sdk-node";
-import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-node";
 import { ATTR_SERVICE_NAME } from "@opentelemetry/semantic-conventions";
 
 // Configuration
@@ -20,7 +19,7 @@ const otlpEndpoint =
   process.env.OTEL_EXPORTER_OTLP_ENDPOINT ?? "http://localhost:4318";
 const otlpEndpointBearerToken = process.env.OTEL_EXPORTER_OTLP_BEARER_TOKEN;
 
-const authHeader = otlpEndpointBearerToken
+const authHeader: Record<string, string> = otlpEndpointBearerToken
   ? { Authorization: `Bearer ${otlpEndpointBearerToken}` }
   : {};
 
@@ -32,17 +31,13 @@ const resource = resourceFromAttributes({
 // Initialize OpenTelemetry SDK
 export const sdk = new NodeSDK({
   resource,
-  spanProcessors: [
-    new BatchSpanProcessor(
-      new OTLPTraceExporter({
-        url: `${otlpEndpoint}/v1/traces`,
-        headers: {
-          ...authHeader,
-          "x-observe-target-package": "Tracing",
-        },
-      })
-    ),
-  ],
+  traceExporter: new OTLPTraceExporter({
+    url: `${otlpEndpoint}/v1/traces`,
+    headers: {
+      ...authHeader,
+      "x-observe-target-package": "Tracing",
+    },
+  }),
   metricReaders: [
     new PeriodicExportingMetricReader({
       exporter: new OTLPMetricExporter({

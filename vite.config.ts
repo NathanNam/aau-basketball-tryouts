@@ -18,4 +18,17 @@ export default defineConfig({
     }),
     viteReact(),
   ],
+  build: {
+    rollupOptions: {
+      external: (id) => {
+        // Externalize server-side OpenTelemetry packages for client build
+        if (id.includes('@opentelemetry/sdk-node') ||
+            id.includes('@opentelemetry/sdk-trace-node') ||
+            id.includes('@opentelemetry/auto-instrumentations-node')) {
+          return true
+        }
+        return false
+      }
+    }
+  }
 })
