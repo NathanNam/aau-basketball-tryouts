@@ -28,6 +28,37 @@ export default defineConfig({
           return true
         }
         return false
+      },
+      output: {
+        manualChunks: {
+          // React vendor bundle
+          'vendor-react': ['react', 'react-dom'],
+          // TanStack router bundle
+          'vendor-router': [
+            '@tanstack/react-router',
+            '@tanstack/react-router-devtools',
+            '@tanstack/react-start'
+          ],
+          // OpenTelemetry instrumentation bundle
+          'vendor-otel': [
+            '@opentelemetry/api',
+            '@opentelemetry/api-logs',
+            '@opentelemetry/exporter-logs-otlp-http',
+            '@opentelemetry/exporter-metrics-otlp-proto',
+            '@opentelemetry/exporter-trace-otlp-http',
+            '@opentelemetry/instrumentation',
+            '@opentelemetry/instrumentation-document-load',
+            '@opentelemetry/instrumentation-fetch',
+            '@opentelemetry/instrumentation-xml-http-request',
+            '@opentelemetry/resources',
+            '@opentelemetry/sdk-logs',
+            '@opentelemetry/sdk-metrics',
+            '@opentelemetry/sdk-trace-web',
+            '@opentelemetry/semantic-conventions'
+          ],
+          // Utility libraries
+          'vendor-utils': ['axios', 'zod', 'tailwind-merge']
+        }
       }
     }
   }
