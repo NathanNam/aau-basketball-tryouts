@@ -6,7 +6,8 @@ interface TryoutCardProps {
 }
 
 export function TryoutCard({ tryout }: TryoutCardProps) {
-  const tryoutDate = new Date(tryout.tryoutDate)
+  // Parse date as local time by appending T00:00:00 to avoid UTC timezone shift
+  const tryoutDate = new Date(tryout.tryoutDate + 'T00:00:00')
   const formattedDate = tryoutDate.toLocaleDateString('en-US', {
     weekday: 'short',
     month: 'short',
@@ -97,7 +98,7 @@ export function TryoutCard({ tryout }: TryoutCardProps) {
           </svg>
           <span>
             {tryout.startTime}
-            {tryout.endTime && ` - ${tryout.endTime}`}
+            {tryout.endTime && ` - ${tryout.endTime}`} PST
           </span>
         </div>
 
