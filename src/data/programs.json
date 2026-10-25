@@ -1,0 +1,514 @@
+{
+  "checked": "2026-10-25",
+  "season": "2026–27",
+  "programs": [
+    {
+      "id": "sfba",
+      "name": "SFBA AAU Basketball",
+      "area": "SF",
+      "city": "San Francisco / Daly City",
+      "genders": [
+        "Boys"
+      ],
+      "ages": [
+        "15U",
+        "16U"
+      ],
+      "circuit": "",
+      "about": "San Francisco training program with boys AAU teams through 10th grade and a March–July spring-summer season.",
+      "status": "set",
+      "tryout": {
+        "teams": "9th–10th grade boys (15U–16U)",
+        "date": "2026-10-27",
+        "time": "7:30–9:00 PM",
+        "venue": "Bayshore Community Center",
+        "address": "450 Martin St, Daly City",
+        "cost": "$15 tryout fee",
+        "register": "https://forms.gle/qYp71CqPhugA89337"
+      },
+      "note": "For the spring-summer 2027 season (late March to late July). Pre-season practices from November cost extra.",
+      "lastSeason": "",
+      "website": "https://www.sfbasportsperformance.com/sfbaaaubasketballsanfrancisco",
+      "contact": {},
+      "sources": [
+        "https://www.sfbasportsperformance.com/sfbaaaubasketballsanfrancisco",
+        "https://forms.gle/qYp71CqPhugA89337"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "wildcats",
+      "name": "Bay Area Wildcats",
+      "area": "East Bay",
+      "city": "Oakland",
+      "genders": [
+        "Boys",
+        "Girls"
+      ],
+      "ages": [
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "Adidas 3SSB / 3Stripes",
+      "about": "Oakland club with youth teams through 15U–17U high school teams on the Adidas 3Stripes pathway.",
+      "status": "soon",
+      "tryout": {
+        "teams": "15U–17U (high school)",
+        "venue": "Oakland High School",
+        "address": "1023 MacArthur Blvd, Oakland"
+      },
+      "note": "An October 2026 flyer says spring 2027 tryouts will be at Oakland High School; no date yet. The club's sign-up form is still titled Fall/Winter 2026, so check with the club.",
+      "lastSeason": "",
+      "website": "https://bayareawildcats.org/",
+      "contact": {
+        "email": "eastbaywildcatshoops@gmail.com",
+        "phone": "(510) 698-9677"
+      },
+      "sources": [
+        "https://bayareawildcats.org/",
+        "https://bayareawildcats.org/wp-content/uploads/2026/10/Bay-Area-Wildcats-Spring-2027-Tryouts-576x1024.jpg"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "topflight",
+      "name": "Top Flight Elite",
+      "area": "South Bay",
+      "city": "San Jose",
+      "genders": [
+        "Boys",
+        "Girls"
+      ],
+      "ages": [
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "",
+      "about": "San Jose year-round club with boys and girls teams from 4th grade through high school.",
+      "status": "soon",
+      "tryout": {
+        "teams": "9th–11th grade boys & girls",
+        "when": "Late February 2027 (after the high school season)",
+        "cost": "$30 tryout registration",
+        "register": "https://topflightelite.leagueapps.com/events/5174393-registration-spring-2027-aau-basketball-tryouts-boys--girls"
+      },
+      "note": "Exact dates, times and gym to be announced. Spring season runs about March–July; the club estimates $1,600–$2,800 per player.",
+      "lastSeason": "",
+      "website": "https://www.topflightelite.com/",
+      "contact": {},
+      "sources": [
+        "https://www.topflightelite.com/",
+        "https://www.topflightelite.com/tryout",
+        "https://www.topflightelite.com/annual-calendar"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "arsenal",
+      "name": "Team Arsenal",
+      "area": "East Bay",
+      "city": "Oakland",
+      "genders": [],
+      "ages": [
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "",
+      "about": "Oakland club with youth and high school divisions, based at Open Gym Premier.",
+      "status": "tba",
+      "tryout": null,
+      "note": "Only fall 2026 tryouts are posted so far.",
+      "lastSeason": "",
+      "website": "https://teamarsenalaau.com/",
+      "contact": {
+        "email": "ArsenalAAU@gmail.com"
+      },
+      "sources": [
+        "https://teamarsenalaau.com/",
+        "https://teamarsenalaau.com/tryouts",
+        "https://teamarsenalaau.com/highschoolschedules/"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "baycity",
+      "name": "Bay City Basketball",
+      "area": "SF",
+      "city": "San Francisco",
+      "genders": [
+        "Boys",
+        "Girls"
+      ],
+      "ages": [
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "Adidas (boys Gold Gauntlet, girls 3SSB)",
+      "about": "Long-running San Francisco club: the Bay City Warriors boys high school program and an Adidas 3SSB girls program.",
+      "status": "tba",
+      "tryout": null,
+      "note": "The site still shows the 2026 season; no 2027 tryout dates yet.",
+      "lastSeason": "",
+      "website": "https://www.baycitybasketball.com/",
+      "contact": {
+        "phone": "(415) 748-9890"
+      },
+      "sources": [
+        "https://www.baycitybasketball.com/",
+        "https://www.baycitybasketball.com/contact-us/",
+        "https://www.baycitybasketball.com/team-program/bay-city-warriors/",
+        "https://www.baycitybasketball.com/team-program/girls-high-school/"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "lakeshow",
+      "name": "Lakeshow",
+      "area": "East Bay",
+      "city": "Oakland / Danville",
+      "genders": [
+        "Boys"
+      ],
+      "ages": [
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "",
+      "about": "Oakland and Danville club with a high school boys program (girls high school teams are listed as coming soon).",
+      "status": "tba",
+      "tryout": null,
+      "note": "No spring 2027 tryouts posted yet.",
+      "lastSeason": "The club held Oakland high school boys tryouts for spring 2026.",
+      "website": "https://www.lakeshowhoops.com/",
+      "contact": {
+        "email": "lakeshowhoops@gmail.com"
+      },
+      "sources": [
+        "https://www.lakeshowhoops.com/",
+        "https://www.lakeshowhoops.com/boys",
+        "https://www.lakeshowhoops.com/faqs",
+        "https://www.lakeshowhoops.com/2026-spring-tryouts",
+        "https://www.lakeshowhoops.com/girls"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "norcalrush",
+      "name": "NorCal Rush",
+      "area": "Peninsula",
+      "city": "Belmont / San Mateo",
+      "genders": [],
+      "ages": [
+        "14U",
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "",
+      "about": "Peninsula club, a partner of Underdogs Basketball, with teams from 3rd grade through varsity age.",
+      "status": "tba",
+      "tryout": null,
+      "note": "Only fall 2026 tryouts were posted (August, Notre Dame de Namur University, Belmont).",
+      "lastSeason": "",
+      "website": "https://www.norcalrushbasketball.com/",
+      "contact": {
+        "email": "norcalrushaau@gmail.com"
+      },
+      "sources": [
+        "https://www.norcalrushbasketball.com/",
+        "https://www.norcalrushbasketball.com/tryouts"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "soldiers",
+      "name": "Oakland Soldiers",
+      "area": "East Bay",
+      "city": "Oakland",
+      "genders": [
+        "Boys"
+      ],
+      "ages": [
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "Nike EYBL",
+      "about": "Oakland's long-established Nike EYBL program, run by a nonprofit, with 15U, 16U and 17U teams.",
+      "status": "tba",
+      "tryout": null,
+      "note": "The official site doesn't post tryout information.",
+      "lastSeason": "",
+      "website": "https://www.soldierbasketball.com/",
+      "contact": {},
+      "sources": [
+        "https://www.soldierbasketball.com/",
+        "https://www.soldierbasketball.com/contact"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "sfchampions",
+      "name": "SF Champions / SF Soldiers",
+      "area": "SF",
+      "city": "San Francisco / South San Francisco",
+      "genders": [
+        "Boys"
+      ],
+      "ages": [
+        "15U",
+        "16U"
+      ],
+      "circuit": "MADE Hoops",
+      "about": "San Francisco club partnered with the Oakland Soldiers; its high school 15U–16U teams play as SF Soldiers.",
+      "status": "tba",
+      "tryout": null,
+      "note": "No spring 2027 tryouts posted yet.",
+      "lastSeason": "Spring 2026 tryouts were in February 2026 at Elite Sports Center 2, South San Francisco.",
+      "website": "https://www.sfchampions.org/",
+      "contact": {
+        "email": "administration@sfchampions.org"
+      },
+      "sources": [
+        "https://www.sfchampions.org/",
+        "https://www.sfchampions.org/spring-summer-2026-tryouts",
+        "https://www.sfchampions.org/fall-2026-tryouts"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "peninsulagold",
+      "name": "Peninsula Gold",
+      "area": "Peninsula",
+      "city": "San Mateo",
+      "genders": [
+        "Boys",
+        "Girls"
+      ],
+      "ages": [
+        "14U",
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "Under Armour",
+      "about": "Team12 Sports' AAU program, with boys and girls teams up to 17U including Under Armour circuit teams.",
+      "status": "tba",
+      "tryout": null,
+      "note": "The site shows an \"Upcoming Gold Tryouts\" banner with no dates yet.",
+      "lastSeason": "",
+      "website": "https://www.team12sports.com/gold-basketball",
+      "contact": {
+        "email": "hello@team12sports.com"
+      },
+      "sources": [
+        "https://www.team12sports.com/",
+        "https://www.team12sports.com/gold-basketball"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "evolution",
+      "name": "Evolution Basketball Club",
+      "area": "Peninsula",
+      "city": "Belmont",
+      "genders": [],
+      "ages": [
+        "15U",
+        "16U"
+      ],
+      "circuit": "",
+      "about": "Belmont club with elementary through high school teams.",
+      "status": "tba",
+      "tryout": null,
+      "note": "No 2027 dates posted yet.",
+      "lastSeason": "Spring 2026 high school tryouts were Feb 7, 2026 at Carlmont High School, Belmont.",
+      "website": "https://evolutionbasketballclub.com/",
+      "contact": {},
+      "sources": [
+        "https://evolutionbasketballclub.com/"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "proven",
+      "name": "PROVEN (Just Hoop)",
+      "area": "East Bay",
+      "city": "San Leandro",
+      "genders": [],
+      "ages": [
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "",
+      "about": "Just Hoop's high school college-prep teams, 15U–17U, based in San Leandro.",
+      "status": "tba",
+      "tryout": null,
+      "note": "\"No open tryouts right now\"; the program keeps an interest list.",
+      "lastSeason": "",
+      "website": "https://www.justhoopinc.com/teams/proven/",
+      "contact": {
+        "email": "info@justhoopinc.com"
+      },
+      "sources": [
+        "https://www.justhoopinc.com/teams/",
+        "https://www.justhoopinc.com/teams/proven/"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "hoopelite",
+      "name": "Hoop Elite",
+      "area": "South Bay",
+      "city": "Los Gatos / San Jose",
+      "genders": [
+        "Boys"
+      ],
+      "ages": [
+        "14U",
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "PUMA NXTPRO",
+      "about": "South Bay boys program, grades 6–12, with seasonal club teams and PUMA NXTPRO circuit teams.",
+      "status": "tba",
+      "tryout": null,
+      "note": "A spring 2027 season (March–May) is listed, but no tryout dates yet; registration usually opens about a month before.",
+      "lastSeason": "Spring 2026 tryouts were Mar 2 and 5, 2026 at Union Middle School, San Jose.",
+      "website": "https://www.hoopelitebasketball.com/",
+      "contact": {
+        "email": "hoopelitebasketball@gmail.com",
+        "phone": "(408) 889-9524"
+      },
+      "sources": [
+        "https://www.hoopelitebasketball.com/",
+        "https://www.hoopelitebasketball.com/aau",
+        "https://www.hoopelitebasketball.com/spring-season"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "snipers",
+      "name": "South Bay Snipers",
+      "area": "South Bay",
+      "city": "Los Gatos",
+      "genders": [
+        "Boys"
+      ],
+      "ages": [
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "",
+      "about": "Silicon Valley club for grades 3–12 that holds tryouts four times a year.",
+      "status": "tba",
+      "tryout": null,
+      "note": "Only fall 2026 high school tryouts are posted (August, JCC Los Gatos). The club says it also holds tryouts around late October for winter.",
+      "lastSeason": "",
+      "website": "https://www.southbaysnipers.org/",
+      "contact": {
+        "email": "southbaysnipers@gmail.com"
+      },
+      "sources": [
+        "https://www.southbaysnipers.org/",
+        "https://www.southbaysnipers.org/hstryouts",
+        "https://www.southbaysnipers.org/faq"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "sharkcity",
+      "name": "Shark City Hoops",
+      "area": "South Bay",
+      "city": "San Jose",
+      "genders": [
+        "Boys",
+        "Girls"
+      ],
+      "ages": [
+        "14U",
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "",
+      "about": "San Jose club for boys and girls in grades 3–12.",
+      "status": "tba",
+      "tryout": null,
+      "note": "Tryouts for the 2026–27 season ran July 28–Aug 15, 2026; a few spots may still be open by evaluation. No separate spring tryout announced.",
+      "lastSeason": "",
+      "website": "https://www.sharkcityhoops.com/",
+      "contact": {
+        "email": "info@sharkcityhoops.com",
+        "phone": "(408) 315-9412"
+      },
+      "sources": [
+        "https://www.sharkcityhoops.com/",
+        "https://www.sharkcityhoops.com/tryouts"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "bueno",
+      "name": "Bueno Basketball Academy",
+      "area": "South Bay",
+      "city": "San Jose",
+      "genders": [
+        "Girls"
+      ],
+      "ages": [
+        "14U",
+        "15U",
+        "16U",
+        "17U"
+      ],
+      "circuit": "",
+      "about": "San Jose girls-only academy with AAU teams from 11U through 17U.",
+      "status": "tba",
+      "tryout": null,
+      "note": "The fall tryout ended Aug 29, 2026; the academy keeps an interest list for the next one.",
+      "lastSeason": "",
+      "website": "https://www.buenobasketball.com/aau-girls-basketball",
+      "contact": {},
+      "sources": [
+        "https://www.buenobasketball.com/aau-girls-basketball"
+      ],
+      "checked": "2026-10-25"
+    },
+    {
+      "id": "underdogs",
+      "name": "Underdogs Basketball",
+      "area": "SF",
+      "city": "San Francisco",
+      "genders": [
+        "Boys",
+        "Girls"
+      ],
+      "ages": [],
+      "circuit": "",
+      "about": "San Francisco youth basketball organization (club teams, leagues and camps, K–12) in SF, the Peninsula and the East Bay; partner of NorCal Rush.",
+      "status": "tba",
+      "tryout": null,
+      "note": "The tryouts page currently says \"No programs at this time.\" Which high school age groups it fields isn't listed.",
+      "lastSeason": "",
+      "website": "https://underdogsbasketball.com/",
+      "contact": {
+        "email": "info@underdogsbasketball.com"
+      },
+      "sources": [
+        "https://underdogsbasketball.com/",
+        "https://underdogsbasketball.com/tryouts/",
+        "https://underdogsbasketball.com/contact/"
+      ],
+      "checked": "2026-10-25"
+    }
+  ]
+}
