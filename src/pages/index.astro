@@ -1,0 +1,289 @@
+---
+import '@fontsource/dela-gothic-one/400.css';
+import '@fontsource/bangers/400.css';
+import '@fontsource/zen-kaku-gothic-new/400.css';
+import '@fontsource/zen-kaku-gothic-new/500.css';
+import '@fontsource/zen-kaku-gothic-new/700.css';
+import Analytics from '@vercel/analytics/astro';
+import data from '../data/programs.json';
+
+type Program = (typeof data.programs)[number];
+const site = Astro.site!;
+const abs = (p: string) => new URL(p, site).href;
+const checked = new Date(data.checked + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+const ORDER = { set: 0, soon: 1, tba: 2 } as const;
+const programs = [...data.programs].sort(
+  (a, b) => ORDER[a.status as keyof typeof ORDER] - ORDER[b.status as keyof typeof ORDER]
+    || (a.tryout?.date ?? '9').localeCompare(b.tryout?.date ?? '9') || a.name.localeCompare(b.name),
+);
+const SECTIONS = [
+  { status: 'set', title: 'Date set', stamp: 'GO!' },
+  { status: 'soon', title: 'Coming soon', stamp: 'SOON' },
+  { status: 'tba', title: 'Not announced yet', stamp: 'TBA' },
+];
+const count = (s: string) => programs.filter((p) => p.status === s).length;
+const AREAS = ['SF', 'Peninsula', 'East Bay', 'South Bay'];
+const AGES = ['14U', '15U', '16U', '17U'];
+
+const ageRange = (p: Program) => (p.ages.length ? (p.ages.length > 1 ? `${p.ages[0]}–${p.ages[p.ages.length - 1]}` : p.ages[0]) : 'Ages not listed');
+const genders = (p: Program) => (p.genders.length ? p.genders.join(' & ') : 'Boys/girls not stated');
+const dateLabel = (d: string) => new Date(d + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+const suggest = 'https://github.com/NathanNam/aau-basketball-tryouts/issues/new?title=' + encodeURIComponent('Suggest a program: ') +
+  '&body=' + encodeURIComponent('Program name:\nWebsite:\nArea / city:\nBoys, girls or both:\nAge groups:\n');
+const report = (p: Program) => 'https://github.com/NathanNam/aau-basketball-tryouts/issues/new?title=' + encodeURIComponent(`Update: ${p.name}`) +
+  '&body=' + encodeURIComponent(`What changed, with a link to where the program posted it:\n`);
+
+const title = 'Bay Area AAU Tryouts';
+const description = `High school (14U–17U) AAU and club basketball tryouts around the San Francisco Bay Area for the ${data.season} season: ${programs.length} programs, checked by hand.`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={site.href} />
+    <meta name="theme-color" content="#f6f1e6" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={title} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={site.href} />
+    <meta property="og:image" content={abs('/og.png')} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bay Area AAU Tryouts, drawn like a sports manga page: bold lettering, speed lines, a hoop and a SWISH! sound effect" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@nathannam" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={abs('/og.png')} />
+  </head>
+  <body>
+    <div class="w">
+      <header class="splash">
+        <div class="sfx" aria-hidden="true">SWISH!</div>
+        <svg class="hoop" viewBox="0 0 300 240" aria-hidden="true">
+          <rect x="40" y="10" width="220" height="140" fill="#fff" stroke="#111" stroke-width="8" />
+          <rect x="110" y="70" width="80" height="58" fill="none" stroke="#111" stroke-width="6" />
+          <path d="M100 152 L118 228 M200 152 L182 228 M120 155 L135 228 M180 155 L165 228 M140 158 L148 228 M160 158 L152 228 M108 180 L192 180 M114 205 L186 205" stroke="#111" stroke-width="3" fill="none" />
+          <ellipse cx="150" cy="150" rx="52" ry="10" fill="none" stroke="#d7192a" stroke-width="8" />
+          <circle cx="214" cy="62" r="30" fill="#111" />
+          <path d="M184 62 H244 M214 32 V92 M193 40 Q214 62 193 84 M235 40 Q214 62 235 84" stroke="#f6f1e6" stroke-width="3" fill="none" />
+          <path d="M252 36 l14 -8 M256 50 l16 -2 M250 22 l8 -12" stroke="#111" stroke-width="4" stroke-linecap="round" />
+        </svg>
+        <div class="in">
+          <span class="kicker">{data.season} season · High school 14U–17U</span>
+          <h1>Bay Area<br />AAU Tryouts</h1>
+          <p>Club basketball tryouts around the Bay, in one place. Checked by hand. Always confirm with the program.</p>
+        </div>
+      </header>
+      <aside class="narr">
+        The fall season is still on. <b>Most programs post spring tryouts after it wraps in late November</b>, and some wait
+        until the high school season ends in late February. Here's who to watch.
+      </aside>
+
+      <section class="score" aria-label="Summary">
+        <div><b>{count('set')}</b>Date set</div>
+        <div><b>{count('soon')}</b>Coming soon</div>
+        <div><b>{count('tba')}</b>Not announced</div>
+        <div><b>{programs.length}</b>Programs</div>
+      </section>
+
+      <form class="filters" id="filters" aria-label="Filter programs">
+        <fieldset><legend>Who</legend>
+          <label><input type="radio" name="g" value="" checked /><span>All</span></label>
+          <label><input type="radio" name="g" value="Boys" /><span>Boys</span></label>
+          <label><input type="radio" name="g" value="Girls" /><span>Girls</span></label>
+        </fieldset>
+        <fieldset><legend>Where</legend>
+          <label><input type="radio" name="a" value="" checked /><span>All</span></label>
+          {AREAS.map((a) => <label><input type="radio" name="a" value={a} /><span>{a}</span></label>)}
+        </fieldset>
+        <fieldset><legend>Age</legend>
+          <label><input type="radio" name="y" value="" checked /><span>All</span></label>
+          {AGES.map((a) => <label><input type="radio" name="y" value={a} /><span>{a}</span></label>)}
+        </fieldset>
+      </form>
+      <p class="meta"><span id="shown">{programs.length} programs</span> · last checked {checked} · not every Bay Area program is listed · <a href={suggest}>know one we're missing?</a></p>
+
+      {SECTIONS.map((s) => {
+        const list = programs.filter((p) => p.status === s.status);
+        return list.length ? (
+          <section class="sec" data-sec={s.status}>
+            <h2 class="ch"><i data-count>{list.length}</i>{s.title}</h2>
+            <div class="grid">
+              {list.map((p, i) => (
+                <article class:list={['pn', { tone: s.status === 'tba' && i % 4 === 1 }]}
+                  data-g={p.genders.join(',')} data-a={p.area} data-y={p.ages.join(',')} data-date={p.tryout?.date ?? ''}>
+                  <div class:list={['stamp', s.status]} aria-label={s.title}>{s.stamp}</div>
+                  <h3>{p.name}</h3>
+                  <div class="where">{p.city} · {p.area}</div>
+                  {p.tryout && (p.tryout.date || p.tryout.when || p.tryout.venue) && (
+                    <div class="when">
+                      {p.tryout.date ? <b>{dateLabel(p.tryout.date)}</b> : p.tryout.when ? <b>{p.tryout.when}</b> : <b>Date TBA</b>}
+                      <span class="past" hidden>Already happened</span>
+                      {[p.tryout.time, p.tryout.venue, p.tryout.cost].filter(Boolean).join(' · ')}
+                      {p.tryout.address && <small>{p.tryout.address}</small>}
+                      {p.tryout.teams && <small>{p.tryout.teams}</small>}
+                    </div>
+                  )}
+                  <div class="tags">
+                    <span>{genders(p)}</span><span>{ageRange(p)}</span>{p.circuit && <span>{p.circuit}</span>}
+                  </div>
+                  <p>{p.about}</p>
+                  {p.note && <p class="note">{p.note}</p>}
+                  {p.lastSeason && <p class="last"><b>Last year:</b> {p.lastSeason}</p>}
+                  {(p.contact.email || p.contact.phone) && (
+                    <p class="contact">{[p.contact.email, p.contact.phone].filter(Boolean).join(' · ')}</p>
+                  )}
+                  <div class="acts">
+                    <a href={p.website} rel="noopener">Program site</a>
+                    {p.tryout?.register && <a class="reg" href={p.tryout.register} rel="noopener">Register</a>}
+                    <a class="fix" href={report(p)} rel="noopener">Report a change</a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null;
+      })}
+      <p class="empty" id="empty" hidden>No programs match. Try another filter.</p>
+
+      <footer>
+        <p>
+          Not affiliated with any program or with any manga. Dates, fees and contacts come from each program's own site,
+          flyer or sign-up form as of {checked}; they change, so confirm with the program before you go. Programs post
+          spring tryouts at different times, so this page is re-checked every week from December to February.
+        </p>
+        <p><a href={suggest}>Suggest a program</a> · <a href="https://github.com/NathanNam/aau-basketball-tryouts">Source</a> · <a href="https://www.nathannam.com">Nathan Nam</a></p>
+      </footer>
+    </div>
+    <Analytics />
+    <script>
+      // Filters, and "already happened" for dates that have passed (judged in the viewer's own day).
+      const form = document.getElementById('filters') as HTMLFormElement;
+      const cards = [...document.querySelectorAll<HTMLElement>('.pn')];
+      const today = new Date();
+      const todayKey = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+      for (const c of cards) {
+        if (c.dataset.date && c.dataset.date < todayKey) {
+          c.classList.add('done');
+          c.querySelector<HTMLElement>('.past')!.hidden = false;
+        }
+      }
+      function apply() {
+        const f = new FormData(form);
+        const g = f.get('g') as string, a = f.get('a') as string, y = f.get('y') as string;
+        let shown = 0;
+        for (const c of cards) {
+          // Programs that don't state boys/girls or ages stay visible under every choice.
+          const okG = !g || !c.dataset.g || c.dataset.g.split(',').includes(g);
+          const okA = !a || c.dataset.a === a;
+          const okY = !y || !c.dataset.y || c.dataset.y.split(',').includes(y);
+          const ok = okG && okA && okY;
+          c.hidden = !ok;
+          if (ok) shown++;
+        }
+        for (const s of document.querySelectorAll<HTMLElement>('.sec')) {
+          const n = s.querySelectorAll('.pn:not([hidden])').length;
+          s.hidden = n === 0;
+          s.querySelector('[data-count]')!.textContent = String(n);
+        }
+        document.getElementById('shown')!.textContent = `${shown} program${shown === 1 ? '' : 's'}`;
+        document.getElementById('empty')!.hidden = shown > 0;
+      }
+      form.addEventListener('change', apply);
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root { --paper: #f6f1e6; --ink: #111; --red: #d7192a; --gray: #77726a; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 16px/1.55 "Zen Kaku Gothic New", system-ui, sans-serif;
+    background-image: radial-gradient(#0000000d 1px, transparent 1.2px); background-size: 6px 6px;
+  }
+  a { color: inherit; }
+  .w { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  /* splash panel */
+  .splash { position: relative; margin: 20px auto 0; border: 5px solid var(--ink); background: #fff; overflow: hidden; min-height: 300px; }
+  .splash::before { content: ""; position: absolute; inset: -50%; background: repeating-conic-gradient(from 0deg at 72% 45%, #0000 0 2.2deg, #111 2.2deg 2.8deg); opacity: .16; }
+  .splash::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 72% 45%, #fff 0 18%, #fff0 42%); }
+  .splash .in { position: relative; z-index: 1; padding: 28px 26px 34px; max-width: 640px; }
+  .kicker { display: inline-block; background: var(--ink); color: #fff; font: 400 15px "Dela Gothic One"; padding: 4px 10px; transform: skew(-8deg); }
+  h1 { font: 400 clamp(40px, 8vw, 84px)/.95 "Dela Gothic One"; margin: 14px 0 12px; text-transform: uppercase; text-shadow: 4px 4px 0 #fff, 6px 6px 0 var(--red); }
+  .splash p { margin: 0; font-weight: 500; max-width: 520px; }
+  .sfx { position: absolute; z-index: 1; font: 400 clamp(44px, 9vw, 96px) Bangers; color: var(--red); -webkit-text-stroke: 3px #111; letter-spacing: .04em; transform: rotate(-12deg); right: 4%; top: 16px; }
+  .hoop { position: absolute; z-index: 1; right: 6%; bottom: -10px; width: min(300px, 42%); }
+  .narr { position: relative; margin: -22px 0 0 auto; width: min(560px, 94%); background: #fff; border: 3px solid var(--ink); padding: 12px 16px; font-weight: 500; box-shadow: 6px 6px 0 var(--ink); z-index: 2; }
+  .narr b { color: var(--red); }
+
+  /* summary + filters */
+  .score { display: flex; gap: 10px; flex-wrap: wrap; margin: 26px 0 16px; }
+  .score div { border: 3px solid var(--ink); background: #fff; padding: 6px 14px; font: 400 15px "Dela Gothic One"; text-transform: uppercase; }
+  .score b { font: 400 26px Bangers; color: var(--red); margin-right: 6px; letter-spacing: .03em; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-bottom: 8px; }
+  fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  legend { float: left; font: 400 13px "Dela Gothic One"; margin-right: 6px; text-transform: uppercase; }
+  .filters input { position: absolute; opacity: 0; pointer-events: none; }
+  .filters span { display: inline-block; border: 2.5px solid var(--ink); background: #fff; padding: 2px 11px; font-weight: 700; font-size: 14px; border-radius: 999px; cursor: pointer; }
+  .filters input:checked + span { background: var(--ink); color: #fff; }
+  .filters input:focus-visible + span { outline: 3px solid var(--red); outline-offset: 2px; }
+  .meta { font-size: 13px; color: var(--gray); margin: 6px 0 18px; }
+
+  /* chapter headings + panels */
+  .ch { display: flex; align-items: center; gap: 12px; margin: 30px 0 12px; font: 400 26px "Dela Gothic One"; text-transform: uppercase; }
+  .ch i { font: 400 18px Bangers; font-style: normal; background: var(--red); color: #fff; padding: 2px 10px; letter-spacing: .06em; transform: rotate(-3deg); }
+  .ch::after { content: ""; flex: 1; height: 5px; background: var(--ink); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; align-items: start; }
+  .pn { position: relative; background: #fff; border: 4px solid var(--ink); padding: 16px 16px 14px; display: flex; flex-direction: column; }
+  .pn[hidden] { display: none; }
+  .pn:nth-child(3n+2) { transform: rotate(.4deg); } .pn:nth-child(3n) { transform: rotate(-.5deg); }
+  .pn.tone { background-image: radial-gradient(#0002 1px, transparent 1.3px); background-size: 5px 5px; }
+  .pn h3 { margin: 0 72px 4px 0; font: 400 21px/1.15 "Dela Gothic One"; }
+  .where { font-size: 14px; color: #444; font-weight: 500; }
+  .when { background: var(--ink); color: #fff; padding: 8px 12px; margin: 12px -16px 0; font-weight: 700; font-size: 15px; }
+  .when b { display: block; font: 400 24px/1.1 Bangers; letter-spacing: .04em; color: #ffd84a; }
+  .when small { display: block; font-weight: 500; font-size: 13px; color: #ddd; }
+  .past { display: inline-block; background: var(--red); color: #fff; font: 400 14px Bangers; letter-spacing: .06em; padding: 0 6px; margin-right: 6px; }
+  .past[hidden] { display: none; }
+  .pn.done .when b { text-decoration: line-through; color: #aaa; }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 12px 0 10px; }
+  .tags span { font-size: 12px; font-weight: 700; border: 2px solid var(--ink); padding: 0 7px; }
+  .pn p { margin: 0 0 8px; font-size: 14px; color: #333; }
+  .pn .note { color: var(--ink); font-weight: 500; }
+  .pn .last { color: #555; font-size: 13px; }
+  .pn .contact { font-size: 13px; color: #555; word-break: break-word; }
+  .stamp { position: absolute; top: 10px; right: 10px; width: 64px; height: 64px; border: 3px solid var(--red); border-radius: 50%; color: var(--red); display: grid; place-items: center; font: 400 16px/1 Bangers; letter-spacing: .04em; transform: rotate(12deg); background: #fff; }
+  .stamp.soon { color: var(--ink); border-color: var(--ink); }
+  .stamp.tba { color: var(--gray); border-color: var(--gray); }
+  .acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; align-items: center; }
+  .acts a { font-weight: 700; font-size: 14px; text-decoration: none; border: 2.5px solid var(--ink); padding: 4px 10px; background: #fff; box-shadow: 3px 3px 0 var(--ink); }
+  .acts a:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+  .acts a.reg { background: var(--red); color: #fff; }
+  .acts a.fix { border: 0; box-shadow: none; padding: 4px 2px; font-size: 12px; font-weight: 500; color: var(--gray); text-decoration: underline; margin-left: auto; }
+  .empty { font: 400 20px "Dela Gothic One"; text-align: center; margin: 40px 0; }
+  footer { margin: 44px 0 30px; border-top: 5px solid var(--ink); padding-top: 14px; font-size: 13px; color: #444; }
+  footer p { margin: 0 0 8px; max-width: 760px; }
+  @media (max-width: 640px) {
+    .splash { min-height: 0; }
+    .splash .in { padding: 74px 18px 30px; }
+    .sfx { top: 12px; right: 14px; font-size: 46px; }
+    .hoop { opacity: .14; width: 70%; right: -6%; }
+    .pn { transform: none !important; }
+    .grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: no-preference) { .acts a { transition: transform .1s, box-shadow .1s; } }
+</style>
