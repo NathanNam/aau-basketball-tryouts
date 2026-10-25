@@ -60,7 +60,7 @@ try {
   // Share image: the splash panel and the season note, framed at 1200×630.
   await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 });
   await page.goto(url, { waitUntil: 'networkidle0' });
-  await page.addStyleTag({ content: 'body{zoom:1.0909}.splash{margin-top:24px;min-height:400px}.narr{margin-top:-40px}.score,.filters,.meta{display:none}' });
+  await page.addStyleTag({ content: 'body{zoom:1.0909}.splash{margin-top:24px;min-height:400px}.narr{margin-top:-40px}.score,.filters,.meta,.sec,.empty,footer{display:none}' });
   await page.screenshot({ path: path.join(pub, 'og.png') });
   console.log('wrote public/og.png');
 } finally {
