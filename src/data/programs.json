@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-25",
+  "checked": "2026-11-03",
   "season": "2026–27",
   "programs": [
     {
@@ -26,7 +26,7 @@
         "cost": "$15 tryout fee",
         "register": "https://forms.gle/qYp71CqPhugA89337"
       },
-      "note": "For the spring-summer 2027 season (late March to late July). Pre-season practices from November cost extra.",
+      "note": "The posted tryout (Oct 27) has passed and no later session is listed, but the sign-up form is still open, so ask the club about a late evaluation. For the spring-summer 2027 season (late March to late July); pre-season practices from November cost extra.",
       "lastSeason": "",
       "website": "https://www.sfbasportsperformance.com/sfbaaaubasketballsanfrancisco",
       "contact": {},
@@ -34,7 +34,7 @@
         "https://www.sfbasportsperformance.com/sfbaaaubasketballsanfrancisco",
         "https://forms.gle/qYp71CqPhugA89337"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "wildcats",
@@ -69,7 +69,7 @@
         "https://bayareawildcats.org/",
         "https://bayareawildcats.org/wp-content/uploads/2026/10/Bay-Area-Wildcats-Spring-2027-Tryouts-576x1024.jpg"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "topflight",
@@ -103,7 +103,7 @@
         "https://www.topflightelite.com/tryout",
         "https://www.topflightelite.com/annual-calendar"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "arsenal",
@@ -131,7 +131,7 @@
         "https://teamarsenalaau.com/tryouts",
         "https://teamarsenalaau.com/highschoolschedules/"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "baycity",
@@ -163,7 +163,7 @@
         "https://www.baycitybasketball.com/team-program/bay-city-warriors/",
         "https://www.baycitybasketball.com/team-program/girls-high-school/"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "lakeshow",
@@ -195,7 +195,7 @@
         "https://www.lakeshowhoops.com/2026-spring-tryouts",
         "https://www.lakeshowhoops.com/girls"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "norcalrush",
@@ -223,7 +223,7 @@
         "https://www.norcalrushbasketball.com/",
         "https://www.norcalrushbasketball.com/tryouts"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "soldiers",
@@ -250,7 +250,7 @@
         "https://www.soldierbasketball.com/",
         "https://www.soldierbasketball.com/contact"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "sfchampions",
@@ -279,7 +279,7 @@
         "https://www.sfchampions.org/spring-summer-2026-tryouts",
         "https://www.sfchampions.org/fall-2026-tryouts"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "peninsulagold",
@@ -310,7 +310,7 @@
         "https://www.team12sports.com/",
         "https://www.team12sports.com/gold-basketball"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "evolution",
@@ -333,7 +333,7 @@
       "sources": [
         "https://evolutionbasketballclub.com/"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "proven",
@@ -360,7 +360,7 @@
         "https://www.justhoopinc.com/teams/",
         "https://www.justhoopinc.com/teams/proven/"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "hoopelite",
@@ -392,7 +392,7 @@
         "https://www.hoopelitebasketball.com/aau",
         "https://www.hoopelitebasketball.com/spring-season"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "snipers",
@@ -411,7 +411,7 @@
       "about": "Silicon Valley club for grades 3–12 that holds tryouts four times a year.",
       "status": "tba",
       "tryout": null,
-      "note": "Only fall 2026 high school tryouts are posted (August, JCC Los Gatos). The club says it also holds tryouts around late October for winter.",
+      "note": "Only fall 2026 high school tryouts are posted (August, JCC Los Gatos). The club says it usually holds winter tryouts at the end of October (none posted this year) and spring tryouts in mid-February.",
       "lastSeason": "",
       "website": "https://www.southbaysnipers.org/",
       "contact": {
@@ -422,7 +422,7 @@
         "https://www.southbaysnipers.org/hstryouts",
         "https://www.southbaysnipers.org/faq"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "sharkcity",
@@ -454,7 +454,7 @@
         "https://www.sharkcityhoops.com/",
         "https://www.sharkcityhoops.com/tryouts"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "bueno",
@@ -481,7 +481,7 @@
       "sources": [
         "https://www.buenobasketball.com/aau-girls-basketball"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     },
     {
       "id": "underdogs",
@@ -508,7 +508,7 @@
         "https://underdogsbasketball.com/tryouts/",
         "https://underdogsbasketball.com/contact/"
       ],
-      "checked": "2026-10-25"
+      "checked": "2026-11-03"
     }
   ]
 }
