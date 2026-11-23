@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-03",
+  "checked": "2026-11-23",
   "season": "2026–27",
   "programs": [
     {
@@ -34,7 +34,7 @@
         "https://www.sfbasportsperformance.com/sfbaaaubasketballsanfrancisco",
         "https://forms.gle/qYp71CqPhugA89337"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "wildcats",
@@ -69,7 +69,7 @@
         "https://bayareawildcats.org/",
         "https://bayareawildcats.org/wp-content/uploads/2026/10/Bay-Area-Wildcats-Spring-2027-Tryouts-576x1024.jpg"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "topflight",
@@ -90,8 +90,8 @@
       "status": "soon",
       "tryout": {
         "teams": "9th–11th grade boys & girls",
-        "when": "Late February 2027 (after the high school season)",
-        "cost": "$30 tryout registration",
+        "when": "Late February / early March 2027 (after the high school season)",
+        "cost": "$30 per player",
         "register": "https://topflightelite.leagueapps.com/events/5174393-registration-spring-2027-aau-basketball-tryouts-boys--girls"
       },
       "note": "Exact dates, times and gym to be announced. Spring season runs about March–July; the club estimates $1,600–$2,800 per player.",
@@ -101,9 +101,10 @@
       "sources": [
         "https://www.topflightelite.com/",
         "https://www.topflightelite.com/tryout",
-        "https://www.topflightelite.com/annual-calendar"
+        "https://www.topflightelite.com/annual-calendar",
+        "https://topflightelite.leagueapps.com/events/5174393-registration-spring-2027-aau-basketball-tryouts-boys--girls"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "arsenal",
@@ -120,7 +121,7 @@
       "about": "Oakland club with youth and high school divisions, based at Open Gym Premier.",
       "status": "tba",
       "tryout": null,
-      "note": "Only fall 2026 tryouts are posted so far.",
+      "note": "Only fall and winter 2026 youth tryouts (3rd–8th grade) are posted so far; nothing yet for high school or spring 2027.",
       "lastSeason": "",
       "website": "https://teamarsenalaau.com/",
       "contact": {
@@ -131,7 +132,7 @@
         "https://teamarsenalaau.com/tryouts",
         "https://teamarsenalaau.com/highschoolschedules/"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "baycity",
@@ -163,7 +164,7 @@
         "https://www.baycitybasketball.com/team-program/bay-city-warriors/",
         "https://www.baycitybasketball.com/team-program/girls-high-school/"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "lakeshow",
@@ -195,7 +196,7 @@
         "https://www.lakeshowhoops.com/2026-spring-tryouts",
         "https://www.lakeshowhoops.com/girls"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "norcalrush",
@@ -223,7 +224,7 @@
         "https://www.norcalrushbasketball.com/",
         "https://www.norcalrushbasketball.com/tryouts"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "soldiers",
@@ -250,7 +251,7 @@
         "https://www.soldierbasketball.com/",
         "https://www.soldierbasketball.com/contact"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "sfchampions",
@@ -279,7 +280,7 @@
         "https://www.sfchampions.org/spring-summer-2026-tryouts",
         "https://www.sfchampions.org/fall-2026-tryouts"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "peninsulagold",
@@ -310,7 +311,7 @@
         "https://www.team12sports.com/",
         "https://www.team12sports.com/gold-basketball"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "evolution",
@@ -333,7 +334,7 @@
       "sources": [
         "https://evolutionbasketballclub.com/"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "proven",
@@ -360,7 +361,7 @@
         "https://www.justhoopinc.com/teams/",
         "https://www.justhoopinc.com/teams/proven/"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "hoopelite",
@@ -392,7 +393,7 @@
         "https://www.hoopelitebasketball.com/aau",
         "https://www.hoopelitebasketball.com/spring-season"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "snipers",
@@ -422,7 +423,7 @@
         "https://www.southbaysnipers.org/hstryouts",
         "https://www.southbaysnipers.org/faq"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "sharkcity",
@@ -454,7 +455,7 @@
         "https://www.sharkcityhoops.com/",
         "https://www.sharkcityhoops.com/tryouts"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "bueno",
@@ -481,7 +482,7 @@
       "sources": [
         "https://www.buenobasketball.com/aau-girls-basketball"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     },
     {
       "id": "underdogs",
@@ -492,12 +493,24 @@
         "Boys",
         "Girls"
       ],
-      "ages": [],
+      "ages": [
+        "15U",
+        "16U",
+        "17U"
+      ],
       "circuit": "",
       "about": "San Francisco youth basketball organization (club teams, leagues and camps, K–12) in SF, the Peninsula and the East Bay; partner of NorCal Rush.",
-      "status": "tba",
-      "tryout": null,
-      "note": "The tryouts page currently says \"No programs at this time.\" Which high school age groups it fields isn't listed.",
+      "status": "set",
+      "tryout": {
+        "teams": "9th–11th grade boys",
+        "date": "2027-02-28",
+        "time": "Time TBD",
+        "venue": "Booker T Washington Gym",
+        "address": "800 Presidio Ave, San Francisco",
+        "cost": "Free",
+        "register": "https://underdogsbasketball.leagueapps.com/events/5204534-sf-spring-2026-basketball-tryouts"
+      },
+      "note": "Spring 2027 tryouts start Feb 7 for younger grades; the high school boys sessions (9th, and 10th–11th) are Feb 28, times to be announced. Registration is open until Feb 10. No high school girls session is listed.",
       "lastSeason": "",
       "website": "https://underdogsbasketball.com/",
       "contact": {
@@ -506,9 +519,11 @@
       "sources": [
         "https://underdogsbasketball.com/",
         "https://underdogsbasketball.com/tryouts/",
-        "https://underdogsbasketball.com/contact/"
+        "https://underdogsbasketball.com/contact/",
+        "https://underdogsbasketball.leagueapps.com/events/5204534-sf-spring-2026-basketball-tryouts",
+        "https://underdogsbasketball.leagueapps.com/location/300911"
       ],
-      "checked": "2026-11-03"
+      "checked": "2026-11-23"
     }
   ]
 }
